@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+
+<div class="mt-5"></div>
+<div class="row mt-5 mb-5">
+
+    <th><a href="/add_blog"><button class="btn btn-success mb-4 ms-5">Add Blogs</button></a></th>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <table class="table table-striped">
+            <tr>
+                <th>Bloger</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Date</th>
+                <th>Short Description</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for x in ubdata %}
+            <tr>
+                <th>{{x.bname}}</th>
+                <th>{{x.bcat}}</th>
+                <th>{{x.btitle}}</th>
+                <th>{{x.bimages}}</th>
+                <th>{{x.bdate}}</th>
+                <th>{{x.bshort_description}}</th>
+                <th>{{x.bdescription}}</th>
+                
+            <th><a href="/update/{{x.id}}"><button class="btn btn-success">Update</button></a></th>
+            <th><a href="/delete/{{x.id}}"><button class="btn btn-danger">Delete</button></a></th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-md-1"></div>
+   
+</div>
+
+
+{% endblock 'main' %}

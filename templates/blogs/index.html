@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+<!--Cards Start-->
+<div class="md text-center typ mt-5">
+
+  <span class="typedJs" style="color: rgb(250, 101, 101);"></span>
+</div>
+
+<div class="row mt-3 mb-5 m-auto">
+  {% for x in alluser %}
+  <div class="col-md-4 mt-2">
+
+    <div class="card text-center h-100">
+      <img class="card-img-top" src="{{x.bimages.url}}" alt="Card image cap" width="100%">
+      <div class="card-body">
+        <p class="card-text">{{x.bcat}}</p>
+        <h5 class="card-title">{{x.btitle}}</h5>
+        <p class="card-text">{{x.bshort_description}}</p>
+        <a href="/user_readmore/{{x.id}}" class="btn text-white">Read More...</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+ 
+
+</div> <!--Cards Ends-->
+
+
+
+
+{% endblock 'main' %}

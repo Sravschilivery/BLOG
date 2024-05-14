@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+   <!--Cards Start-->
+   <div class="mt-5"></div>
+   <div class="row mt-3 mb-5 m-auto">
+    
+    <div class="col-md-2  mt-5 tt">
+      
+    </div>
+
+    <div class="col-md-8  mt-5 tt">
+
+          <div class="card ">
+            <div class="card-body">
+                <p class="card-text">{{bdata.bcat}}</p>
+                <h2 class="card-title">{{bdata.btitle}}</h2>
+                <p class="card-text">{{bdata.bdate}}  /<span>  {{bdata.bname}}</span></p>
+                <img class="card-img-top" src="{{bdata.bimages.url}}" alt="Card image cap" width="100%">
+              <p class="card-text">{{bdata.bdescription}}</p>
+            </div>
+          </div>
+      
+      
+    </div>
+
+    <div class="col-md-2  mt-5 tt">
+    </div>
+  
+  </div>  <!--Cards Ends-->
+
+  
+  
+
+{% endblock 'main' %}

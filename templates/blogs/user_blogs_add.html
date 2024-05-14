@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+<div class="mt-5"></div>
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        {% if msg %}
+        <div class="alert alert-danger">
+            {{msg}}
+        </div>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3 ">
+                <label for="Input1" class="form-label">Blogger Name</label>
+                <input type="text" class="form-control" id="Input1" name="bname" placeholder="Enter Name">
+            </div>
+            <div class="mb-3">
+                <label for="Input2" class="form-label">Category</label>
+                <select name="cat" id="">
+                    <option value="World">World</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Business">Business</option>
+                    <option value="Art-Design">Art-Design</option>
+                    <option value="Entertainment">Entertainment</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Input4" class="form-label">Title</label>
+                <input type="text" class="form-control" id="Input4" name="title"
+                    placeholder="Enter title">
+            </div>
+            <div class="mb-3">
+                <label for="Input4" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="Input4" name="img"
+                    accept="Image/*">
+            </div>
+            <div class="mb-3">
+                <label for="dat">Date:</label>
+                <input type="date" id="dat" name="date">
+            </div>
+            <div class="mb-3">
+                <label for="Input3" class="form-label">Short Description</label>
+                <textarea class="form-control" name="sdesc" id="Textarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="Input3" class="form-label">Description</label>
+                <textarea class="form-control" name="desc" id="Textarea1" rows="6"></textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger rounded-4">Add</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+{% endblock 'main' %}

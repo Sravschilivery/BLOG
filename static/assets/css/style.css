@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(250, 212, 212);
+  }
+
+.anchor{
+    text-decoration: none;
+}
+
+.typ{
+  font-size:70px;
+}
+
+.card:hover{
+box-shadow: 2px 2px 35px rgb(241, 84, 84);
+}
+
